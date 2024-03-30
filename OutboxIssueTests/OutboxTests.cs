@@ -21,6 +21,6 @@ public class OutboxTests
         (await webApplicationFactory.ServiceBusHarness.Consumed.Any<MessageA>()).Should().Be(true);
 
         // Assert
-        GlobalStateForAssertions.ActualSendEndpointProviderType?.Name.Should().Contain("MassTransit.EntityFrameworkCoreIntegration.DbContextOutbox");
+        GlobalStateForAssertions.ActualSendEndpointProviderType?.FullName.Should().Contain("MassTransit.EntityFrameworkCoreIntegration.DbContextOutbox");
     }
 }
